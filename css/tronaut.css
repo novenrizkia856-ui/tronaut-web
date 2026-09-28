@@ -230,3 +230,11 @@ a.tr-row:hover .tr-go .btn-cta_btn-icon { transform: translateX(var(--4px)); }
   transition: background-color .6s cubic-bezier(.25, 1, .5, 1);
 }
 .tr-ca_copy:hover { background-color: var(--_colors---base-1000--10); }
+.tr-ca.on-dark .tr-ca_label { opacity: .6; }
+.tr-ca.on-dark[data-state="soon"] [data-token-address] { color: var(--_colors---base-0--100); opacity: .8; }
+.tr-ca.on-dark .tr-ca_copy { color: var(--_colors---base-0--100); border-color: var(--_colors---base-0--40); }
+.tr-ca.on-dark .tr-ca_copy:hover { background-color: var(--_colors---base-0--15); }
+.tr-ca [data-token-address] { word-break: break-all; }
+.tr-ca_mobile { position: relative; z-index: 2; }
+.tr-ca_mobile .tr-ca { text-shadow: 0 1px 14px rgba(0, 0, 0, .45); }
+.tr-ca_mobile .tr-ca_copy { background-color: rgba(49, 39, 38, .35); }
