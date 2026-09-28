@@ -40,8 +40,9 @@ const TYPES = { ".html": "text/html", ".js": "text/javascript", ".mjs": "text/ja
 const server = createServer(async (req, res) => {
   let path = decodeURIComponent(new URL(req.url, "http://x").pathname);
   if (path.endsWith("/")) path += "index.html";
-  const m = path.match(/^\/aircraft\/([^/]+)$/);
-  if (m) path = "/aircraft.html";
+  // Mirror vercel.json: the /aircraft/:reg rewrite and cleanUrls.
+  if (/^\/aircraft\/[^/]+$/.test(path)) path = "/aircraft.html";
+  if (!extname(path) && existsSync(join(root, path + ".html"))) path += ".html";
   const file = normalize(join(root, path));
   if (!file.startsWith(root) || !existsSync(file)) { res.writeHead(404); res.end("not found"); return; }
   res.writeHead(200, { "content-type": TYPES[extname(file)] || "application/octet-stream" });
