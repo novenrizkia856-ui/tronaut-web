@@ -32,6 +32,9 @@
 
   var lenis = null;
   var breakPoint = 992;
+  // The reference blurs text in from 36px. Large blur filters are expensive on
+  // tablets and phones, so touch screens get a lighter blur with the same timing.
+  var BLUR = window.matchMedia("(hover: none), (pointer: coarse)").matches ? "blur(14px)" : "blur(36px)";
   var resizeTimeout = null;
   var readyResolve;
   var ready = new Promise(function (r) { readyResolve = r; });
@@ -190,8 +193,8 @@
       var tl = gsap.timeline({ defaults: { overwrite: "auto" } });
       el.__revealTL = tl;
       if (type === "lines") {
-        if (dir === "in") tl.fromTo(targets, { filter: "blur(36px)", opacity: 0 }, { filter: "blur(0px)", opacity: 1, duration: 1, stagger: 0.08, ease: "Out" });
-        else tl.to(targets, { filter: "blur(36px)", opacity: 0, duration: 0.6, stagger: 0.02, ease: "In" });
+        if (dir === "in") tl.fromTo(targets, { filter: BLUR, opacity: 0 }, { filter: "blur(0px)", opacity: 1, duration: 1, stagger: 0.08, ease: "Out" });
+        else tl.to(targets, { filter: BLUR, opacity: 0, duration: 0.6, stagger: 0.02, ease: "In" });
       } else if (type === "words") {
         if (dir === "in") tl.fromTo(targets, { opacity: 0, rotateX: 90 }, { opacity: 1, rotateX: 0, transformOrigin: "center bottom", duration: 1, delay: 0.2, stagger: 0.075, ease: "Out" });
         else tl.to(targets, { opacity: 0, rotateX: 90, transformOrigin: "center bottom", duration: 0.6, stagger: 0.05, ease: "Out" });
@@ -331,12 +334,12 @@
 
   /* ---------- reveals ---------- */
   function initScrollElementsReveal() {
-    mq(DESKTOP, function () {
+    mq("all", function () {
       document.querySelectorAll("[data-line-reveal='true']").forEach(function (el) {
         el.innerHTML = el.innerHTML.replace(/(<br\s*\/?>\s*){2}/g, "$1&zwnj;$1");
         var split = new SplitText(el, { type: "lines", linesClass: "line" });
         gsap.timeline({ scrollTrigger: { trigger: el, start: "top bottom", end: "top bottom", toggleActions: "play none none none" } })
-          .from(split.lines, { filter: "blur(36px)", opacity: 0, duration: 1, delay: 0.3, stagger: 0.1, ease: "Out" });
+          .from(split.lines, { filter: BLUR, opacity: 0, duration: 1, delay: 0.3, stagger: 0.1, ease: "Out" });
         gsap.set(el, { visibility: "visible" });
       });
       document.querySelectorAll("[data-char-reveal='true']").forEach(function (el) {
@@ -344,7 +347,7 @@
         var split = new SplitText(el, { type: "words,chars", linesClass: "line", wordsClass: "word", charsClass: "char" });
         gsap.set(split.words, { display: "inline-block", whiteSpace: "nowrap" });
         gsap.timeline({ scrollTrigger: { trigger: el, start: "top bottom", end: "top bottom", toggleActions: "play none none none" } })
-          .from(split.chars, { filter: "blur(36px)", opacity: 0, duration: 1, delay: 0.3, stagger: 0.05, ease: "Out" });
+          .from(split.chars, { filter: BLUR, opacity: 0, duration: 1, delay: 0.3, stagger: 0.05, ease: "Out" });
         gsap.set(el, { visibility: "visible" });
       });
       document.querySelectorAll('[data-div-reveal="true"]').forEach(function (el) { revealChildren(el); });
@@ -355,7 +358,7 @@
     var kids = Array.from(el.children);
     if (!kids.length) return;
     gsap.timeline({ scrollTrigger: { trigger: el, start: "top bottom", end: "top bottom", toggleActions: "play none none none" } })
-      .from(kids, { filter: "blur(36px)", opacity: 0, duration: 1, delay: 0.3, stagger: 0.1, ease: "Out" });
+      .from(kids, { filter: BLUR, opacity: 0, duration: 1, delay: 0.3, stagger: 0.1, ease: "Out" });
     gsap.set(kids, { visibility: "visible" });
   }
 
@@ -370,13 +373,13 @@
   }
 
   function initHighlightText() {
-    mq(DESKTOP, function () {
+    mq("all", function () {
       document.querySelectorAll("[data-highlight-text]").forEach(function (el) {
         var split = new SplitText(el, { type: "words,chars", linesClass: "line", wordsClass: "word", charsClass: "char", tag: "span" });
         gsap.set(split.words, { display: "inline-block", whiteSpace: "nowrap" });
         if (!split.chars || !split.chars.length) return;
         var trigger = el.closest("[data-highlight-wrapper]") || el;
-        gsap.timeline({ scrollTrigger: { trigger: trigger, start: "top 75%", end: "bottom 75%", scrub: true } })
+        gsap.timeline({ scrollTrigger: { trigger: trigger, start: "top 75%", end: "bottom 75%", scrub: 0.8 } })
           .from(split.chars, { opacity: 0.15, duration: 0.6, ease: "Out", stagger: { each: 0.04 } });
         gsap.set(el, { opacity: 1 });
       });
@@ -626,7 +629,7 @@
         return { startLat: 180 * (Math.random() - 0.5), startLng: 360 * (Math.random() - 0.5), endLat: 180 * (Math.random() - 0.5), endLng: 360 * (Math.random() - 0.5), color: ["#7A716E", "#7A716E"] };
       });
       var points = arcs.flatMap(function (a) { return [{ lat: a.startLat, lng: a.startLng }, { lat: a.endLat, lng: a.endLng }]; });
-      var g = Globe()(el).globeImageUrl("assets/img/globe-map.svg").showAtmosphere(false).backgroundColor("rgba(0,0,0,0)")
+      var g = Globe()(el).globeImageUrl("assets/img/globe-map.webp").showAtmosphere(false).backgroundColor("rgba(0,0,0,0)")
         .width(el.offsetWidth).height(el.offsetHeight)
         .arcsData(arcs).arcColor("color").arcStroke(0.5).arcDashLength(0.6).arcDashGap(0.2).arcDashAnimateTime(8000).arcsTransitionDuration(0)
         .pointsData(points).pointColor(function () { return "#7A716E"; }).pointAltitude(0).pointRadius(0.5).pointResolution(8).pointsTransitionDuration(0);
@@ -638,6 +641,16 @@
       controls.minPolarAngle = polar; controls.maxPolarAngle = polar;
       controls.autoRotate = true; controls.autoRotateSpeed = 2;
       window.addEventListener("resize", function () { g.width(el.offsetWidth).height(el.offsetHeight); });
+      // Keep the WebGL loop off while the globe is out of view, and cap the
+      // pixel ratio, so the rest of the page scrolls without competing frames.
+      var r = g.renderer && g.renderer();
+      if (r && r.setPixelRatio) r.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
+      if ("IntersectionObserver" in window && g.pauseAnimation) {
+        g.pauseAnimation();
+        new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) { if (e.isIntersecting) g.resumeAnimation(); else g.pauseAnimation(); });
+        }, { rootMargin: "200px 0px" }).observe(el);
+      }
     });
   }
 
@@ -763,7 +776,7 @@
   var api = window.TronautMotion = {
     ready: ready,
     bind: function (scope) { bindHovers(scope || document); },
-    reveal: function (el) { if (window.matchMedia(DESKTOP).matches) revealChildren(el); },
+    reveal: function (el) { revealChildren(el); },
     refresh: function () { ScrollTrigger.refresh(); },
     openPopup: openPopup,
     closePopup: closePopup,
