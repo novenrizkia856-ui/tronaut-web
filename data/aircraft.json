@@ -1,0 +1,1958 @@
+{
+  "dataset": {
+    "name": "TRONAUT demo catalogue",
+    "demo": true,
+    "updated": "2026-09-28",
+    "note": "Fictional aircraft for demonstration. Registrations, serials, owners and evidence are placeholders."
+  },
+  "aircraft": [
+    {
+      "assetId": "TRN0001",
+      "demo": true,
+      "registration": "N650TR",
+      "manufacturer": "Gulfstream",
+      "model": "G650ER",
+      "msn": "DEMO 6501",
+      "year": 2019,
+      "category": "Ultra long range jet",
+      "status": "Active",
+      "verification": {
+        "registration": "verified",
+        "manufacturer": "verified",
+        "model": "verified",
+        "msn": "verified",
+        "year": "verified",
+        "category": "reported",
+        "status": "reported"
+      },
+      "fieldEvidence": {
+        "registration": "TRN0001/REG",
+        "msn": "TRN0001/REG",
+        "year": "TRN0001/AW",
+        "status": "TRN0001/MX"
+      },
+      "specs": [
+        {
+          "label": "Range",
+          "value": "7,500 nm",
+          "state": "reported",
+          "note": "Type figures published by the manufacturer. Not measured on this airframe."
+        },
+        {
+          "label": "Maximum seating",
+          "value": "19 passengers",
+          "state": "reported",
+          "note": "Type figures published by the manufacturer. Not measured on this airframe."
+        },
+        {
+          "label": "Engines",
+          "value": "2 × Rolls Royce BR725",
+          "state": "reported",
+          "note": "Type figures published by the manufacturer. Not measured on this airframe."
+        },
+        {
+          "label": "Maximum speed",
+          "value": "Mach 0.925",
+          "state": "reported",
+          "note": "Type figures published by the manufacturer. Not measured on this airframe."
+        }
+      ],
+      "rights": {
+        "owner": {
+          "label": "Registered owner",
+          "value": "Owner trust on file (demo)",
+          "state": "verified",
+          "evidence": "TRN0001/BILL"
+        },
+        "operator": {
+          "label": "Operator",
+          "value": "Private operator, not for hire (demo)",
+          "state": "reported",
+          "evidence": null
+        },
+        "economic": [
+          {
+            "label": "Financing",
+            "value": "First priority mortgage reported",
+            "state": "reported",
+            "evidence": "TRN0001/LIEN"
+          },
+          {
+            "label": "Lease",
+            "value": "No lease recorded",
+            "state": "verified",
+            "evidence": "TRN0001/LIEN"
+          }
+        ],
+        "token": {
+          "label": "Token representation",
+          "value": "None issued",
+          "state": "verified",
+          "evidence": null
+        }
+      },
+      "history": [
+        {
+          "date": "2019-04-11",
+          "event": "Delivered new",
+          "detail": "Gulfstream G650ER delivered to first owner.",
+          "state": "reported",
+          "evidence": null
+        },
+        {
+          "date": "2019-04-21",
+          "event": "First registration",
+          "detail": "Registered as N650TR.",
+          "state": "verified",
+          "evidence": "TRN0001/REG"
+        },
+        {
+          "date": "2022-11-01",
+          "event": "Change of ownership",
+          "detail": "Transferred to the current owner.",
+          "state": "verified",
+          "evidence": "TRN0001/BILL"
+        },
+        {
+          "date": "2025-02-21",
+          "event": "Heavy maintenance check",
+          "detail": "Scheduled inspection released to service.",
+          "state": "reported",
+          "evidence": "TRN0001/MX"
+        },
+        {
+          "date": "2026-06-01",
+          "event": "Record structured on TRONAUT",
+          "detail": "Demo profile created. Not anchored onchain.",
+          "state": "verified",
+          "evidence": null
+        }
+      ],
+      "evidence": [
+        {
+          "id": "TRN0001/REG",
+          "title": "Certificate of registration",
+          "type": "Registration",
+          "source": "Civil aviation registry extract (demo)",
+          "reference": "DEMO/REGISTRATION/0001",
+          "uri": null,
+          "hash": "0x7cf542ef6e76f82b46bd127348d7657606aa04332b35ff1c5aaf8c8911027b66",
+          "hashAlgorithm": "sha256",
+          "timestamp": "2026-01-11T09:00:00Z",
+          "state": "verified",
+          "attestation": "TRN0001/ATT/REG",
+          "anchor": null
+        },
+        {
+          "id": "TRN0001/BILL",
+          "title": "Bill of sale",
+          "type": "Title",
+          "source": "Transfer document held by closing agent (demo)",
+          "reference": "DEMO/TITLE/0001",
+          "uri": null,
+          "hash": "0xcfa7c476a56be357b02a0a10791552483c26ba7a685475f09daa36e98634cf2d",
+          "hashAlgorithm": "sha256",
+          "timestamp": "2026-02-11T09:00:00Z",
+          "state": "verified",
+          "attestation": "TRN0001/ATT/TITLE",
+          "anchor": null
+        },
+        {
+          "id": "TRN0001/AW",
+          "title": "Airworthiness certificate",
+          "type": "Airworthiness",
+          "source": "Issued with the export and import file (demo)",
+          "reference": "DEMO/AIRWORTHINESS/0001",
+          "uri": null,
+          "hash": "0x913a3656a85873dcc7054422341148ac60a19604b55c5a03c1edef19de8a1353",
+          "hashAlgorithm": "sha256",
+          "timestamp": "2026-03-11T09:00:00Z",
+          "state": "reported",
+          "attestation": null,
+          "anchor": null
+        },
+        {
+          "id": "TRN0001/MX",
+          "title": "Latest heavy check release",
+          "type": "Maintenance",
+          "source": "Maintenance organisation work package (demo)",
+          "reference": "DEMO/MAINTENANCE/0001",
+          "uri": null,
+          "hash": "0xc7266b0db23c037a35424c8417f4fc5911e3a16aa905a12c042496772bbcc4b4",
+          "hashAlgorithm": "sha256",
+          "timestamp": "2026-04-11T09:00:00Z",
+          "state": "reported",
+          "attestation": "TRN0001/ATT/MX",
+          "anchor": null
+        },
+        {
+          "id": "TRN0001/INS",
+          "title": "Hull insurance certificate",
+          "type": "Insurance",
+          "source": "Broker certificate of insurance (demo)",
+          "reference": "DEMO/INSURANCE/0001",
+          "uri": null,
+          "hash": "0xd4f69344520f60225492750aef335da556dbc5cba999ad70ddd220c9f0b09d2c",
+          "hashAlgorithm": "sha256",
+          "timestamp": "2026-05-11T09:00:00Z",
+          "state": "reported",
+          "attestation": null,
+          "anchor": null
+        },
+        {
+          "id": "TRN0001/LIEN",
+          "title": "Lien and interest search",
+          "type": "Liens",
+          "source": "International registry search result (demo)",
+          "reference": "DEMO/LIENS/0001",
+          "uri": null,
+          "hash": "0x0435e0b9c2bb7be1d304317c6a9d0de6de6bfc38e103da98cabe90a94e343afd",
+          "hashAlgorithm": "sha256",
+          "timestamp": "2026-06-11T09:00:00Z",
+          "state": "reported",
+          "attestation": null,
+          "anchor": null
+        }
+      ],
+      "attestations": [
+        {
+          "id": "TRN0001/ATT/REG",
+          "assetId": "TRN0001",
+          "type": "Registration confirmed",
+          "issuer": "Registry agent (demo)",
+          "issuerAddress": null,
+          "timestamp": "2026-02-20T12:00:00Z",
+          "evidence": "TRN0001/REG",
+          "state": "verified",
+          "tx": null,
+          "block": null
+        },
+        {
+          "id": "TRN0001/ATT/TITLE",
+          "assetId": "TRN0001",
+          "type": "Title chain reviewed",
+          "issuer": "Aviation counsel (demo)",
+          "issuerAddress": null,
+          "timestamp": "2026-03-04T15:30:00Z",
+          "evidence": "TRN0001/BILL",
+          "state": "verified",
+          "tx": null,
+          "block": null
+        },
+        {
+          "id": "TRN0001/ATT/MX",
+          "assetId": "TRN0001",
+          "type": "Records inspection",
+          "issuer": "Independent inspector (demo)",
+          "issuerAddress": null,
+          "timestamp": "2026-05-11T08:15:00Z",
+          "evidence": "TRN0001/MX",
+          "state": "verified",
+          "tx": null,
+          "block": null
+        }
+      ],
+      "onchain": {
+        "network": "Robinhood Chain",
+        "registry": null,
+        "onchainAssetId": null,
+        "tx": null,
+        "block": null,
+        "timestamp": null,
+        "metadataRef": null,
+        "evidenceRoot": "0x134537d4bde84b3072fef0a12081170f38e07ebb5837d7131b6b8732c1c62796",
+        "evidenceRootComputed": true
+      }
+    },
+    {
+      "assetId": "TRN0002",
+      "demo": true,
+      "registration": "N750TR",
+      "manufacturer": "Bombardier",
+      "model": "Global 7500",
+      "msn": "DEMO 7502",
+      "year": 2021,
+      "category": "Ultra long range jet",
+      "status": "Active",
+      "verification": {
+        "registration": "verified",
+        "manufacturer": "verified",
+        "model": "verified",
+        "msn": "verified",
+        "year": "verified",
+        "category": "reported",
+        "status": "verified"
+      },
+      "fieldEvidence": {
+        "registration": "TRN0002/REG",
+        "msn": "TRN0002/REG",
+        "year": "TRN0002/AW",
+        "status": "TRN0002/MX"
+      },
+      "specs": [
+        {
+          "label": "Range",
+          "value": "7,700 nm",
+          "state": "reported",
+          "note": "Type figures published by the manufacturer. Not measured on this airframe."
+        },
+        {
+          "label": "Maximum seating",
+          "value": "19 passengers",
+          "state": "reported",
+          "note": "Type figures published by the manufacturer. Not measured on this airframe."
+        },
+        {
+          "label": "Engines",
+          "value": "2 × GE Passport",
+          "state": "reported",
+          "note": "Type figures published by the manufacturer. Not measured on this airframe."
+        },
+        {
+          "label": "Maximum speed",
+          "value": "Mach 0.925",
+          "state": "reported",
+          "note": "Type figures published by the manufacturer. Not measured on this airframe."
+        }
+      ],
+      "rights": {
+        "owner": {
+          "label": "Registered owner",
+          "value": "Corporate owner on file (demo)",
+          "state": "verified",
+          "evidence": "TRN0002/BILL"
+        },
+        "operator": {
+          "label": "Operator",
+          "value": "Managed by a charter certificate holder (demo)",
+          "state": "reported",
+          "evidence": null
+        },
+        "economic": [
+          {
+            "label": "Financing",
+            "value": "No financing recorded",
+            "state": "unknown",
+            "evidence": "TRN0002/LIEN"
+          },
+          {
+            "label": "Lease",
+            "value": "Operating lease reported",
+            "state": "reported",
+            "evidence": "TRN0002/LIEN"
+          }
+        ],
+        "token": {
+          "label": "Token representation",
+          "value": "None issued",
+          "state": "verified",
+          "evidence": null
+        }
+      },
+      "history": [
+        {
+          "date": "2021-05-12",
+          "event": "Delivered new",
+          "detail": "Bombardier Global 7500 delivered to first owner.",
+          "state": "reported",
+          "evidence": null
+        },
+        {
+          "date": "2021-05-22",
+          "event": "First registration",
+          "detail": "Registered as N750TR.",
+          "state": "verified",
+          "evidence": "TRN0002/REG"
+        },
+        {
+          "date": "2025-03-22",
+          "event": "Heavy maintenance check",
+          "detail": "Scheduled inspection released to service.",
+          "state": "reported",
+          "evidence": "TRN0002/MX"
+        },
+        {
+          "date": "2026-06-01",
+          "event": "Record structured on TRONAUT",
+          "detail": "Demo profile created. Not anchored onchain.",
+          "state": "verified",
+          "evidence": null
+        }
+      ],
+      "evidence": [
+        {
+          "id": "TRN0002/REG",
+          "title": "Certificate of registration",
+          "type": "Registration",
+          "source": "Civil aviation registry extract (demo)",
+          "reference": "DEMO/REGISTRATION/0002",
+          "uri": null,
+          "hash": "0x0ab1748d28828910fc55136d3997940224ff5d52a3f4e9bb85dbf8dc2ef3fb76",
+          "hashAlgorithm": "sha256",
+          "timestamp": "2026-01-12T09:00:00Z",
+          "state": "verified",
+          "attestation": "TRN0002/ATT/REG",
+          "anchor": null
+        },
+        {
+          "id": "TRN0002/BILL",
+          "title": "Bill of sale",
+          "type": "Title",
+          "source": "Transfer document held by closing agent (demo)",
+          "reference": "DEMO/TITLE/0002",
+          "uri": null,
+          "hash": "0x63d411cef4cb8ea1f3972ffdc90d273f3b5e3378f56f75b8632771dbe45989af",
+          "hashAlgorithm": "sha256",
+          "timestamp": "2026-02-12T09:00:00Z",
+          "state": "verified",
+          "attestation": "TRN0002/ATT/TITLE",
+          "anchor": null
+        },
+        {
+          "id": "TRN0002/AW",
+          "title": "Airworthiness certificate",
+          "type": "Airworthiness",
+          "source": "Issued with the export and import file (demo)",
+          "reference": "DEMO/AIRWORTHINESS/0002",
+          "uri": null,
+          "hash": "0x15cbd5ae5985aa8d90450b0665526f365c6cccb46b23d5745802350e83aad737",
+          "hashAlgorithm": "sha256",
+          "timestamp": "2026-03-12T09:00:00Z",
+          "state": "verified",
+          "attestation": null,
+          "anchor": null
+        },
+        {
+          "id": "TRN0002/MX",
+          "title": "Latest heavy check release",
+          "type": "Maintenance",
+          "source": "Maintenance organisation work package (demo)",
+          "reference": "DEMO/MAINTENANCE/0002",
+          "uri": null,
+          "hash": "0x04209ae37ed3251da75d778f2c8a65749a46970585404e8853f39f460ffee2b0",
+          "hashAlgorithm": "sha256",
+          "timestamp": "2026-04-12T09:00:00Z",
+          "state": "reported",
+          "attestation": "TRN0002/ATT/MX",
+          "anchor": null
+        },
+        {
+          "id": "TRN0002/INS",
+          "title": "Hull insurance certificate",
+          "type": "Insurance",
+          "source": "Broker certificate of insurance (demo)",
+          "reference": "DEMO/INSURANCE/0002",
+          "uri": null,
+          "hash": "0x8910788e4784bf282062b935f567f114e675b738982159429471038e2628e820",
+          "hashAlgorithm": "sha256",
+          "timestamp": "2026-05-12T09:00:00Z",
+          "state": "reported",
+          "attestation": null,
+          "anchor": null
+        },
+        {
+          "id": "TRN0002/LIEN",
+          "title": "Lien and interest search",
+          "type": "Liens",
+          "source": "International registry search result (demo)",
+          "reference": "DEMO/LIENS/0002",
+          "uri": null,
+          "hash": "0xba9d1d1c0958c4a44ad35ed2df4858cf13660153ea30eb80014ddb4cb6acac0b",
+          "hashAlgorithm": "sha256",
+          "timestamp": "2026-06-12T09:00:00Z",
+          "state": "unknown",
+          "attestation": null,
+          "anchor": null
+        }
+      ],
+      "attestations": [
+        {
+          "id": "TRN0002/ATT/REG",
+          "assetId": "TRN0002",
+          "type": "Registration confirmed",
+          "issuer": "Registry agent (demo)",
+          "issuerAddress": null,
+          "timestamp": "2026-02-20T12:00:00Z",
+          "evidence": "TRN0002/REG",
+          "state": "verified",
+          "tx": null,
+          "block": null
+        },
+        {
+          "id": "TRN0002/ATT/TITLE",
+          "assetId": "TRN0002",
+          "type": "Title chain reviewed",
+          "issuer": "Aviation counsel (demo)",
+          "issuerAddress": null,
+          "timestamp": "2026-03-04T15:30:00Z",
+          "evidence": "TRN0002/BILL",
+          "state": "verified",
+          "tx": null,
+          "block": null
+        },
+        {
+          "id": "TRN0002/ATT/MX",
+          "assetId": "TRN0002",
+          "type": "Records inspection",
+          "issuer": "Independent inspector (demo)",
+          "issuerAddress": null,
+          "timestamp": "2026-05-11T08:15:00Z",
+          "evidence": "TRN0002/MX",
+          "state": "verified",
+          "tx": null,
+          "block": null
+        }
+      ],
+      "onchain": {
+        "network": "Robinhood Chain",
+        "registry": null,
+        "onchainAssetId": null,
+        "tx": null,
+        "block": null,
+        "timestamp": null,
+        "metadataRef": null,
+        "evidenceRoot": "0x8ea8f7cff98ba85d0d9af18e56ed33665a6f8816fe2644cd1adc0d8e70d18763",
+        "evidenceRootComputed": true
+      }
+    },
+    {
+      "assetId": "TRN0003",
+      "demo": true,
+      "registration": "N8XTR",
+      "manufacturer": "Dassault",
+      "model": "Falcon 8X",
+      "msn": "DEMO 8803",
+      "year": 2018,
+      "category": "Long range jet",
+      "status": "Active",
+      "verification": {
+        "registration": "verified",
+        "manufacturer": "verified",
+        "model": "verified",
+        "msn": "reported",
+        "year": "reported",
+        "category": "reported",
+        "status": "unverified"
+      },
+      "fieldEvidence": {
+        "registration": "TRN0003/REG",
+        "msn": "TRN0003/REG",
+        "year": "TRN0003/AW",
+        "status": "TRN0003/MX"
+      },
+      "specs": [
+        {
+          "label": "Range",
+          "value": "6,450 nm",
+          "state": "reported",
+          "note": "Type figures published by the manufacturer. Not measured on this airframe."
+        },
+        {
+          "label": "Maximum seating",
+          "value": "16 passengers",
+          "state": "reported",
+          "note": "Type figures published by the manufacturer. Not measured on this airframe."
+        },
+        {
+          "label": "Engines",
+          "value": "3 × Pratt & Whitney PW307D",
+          "state": "reported",
+          "note": "Type figures published by the manufacturer. Not measured on this airframe."
+        },
+        {
+          "label": "Maximum speed",
+          "value": "Mach 0.90",
+          "state": "reported",
+          "note": "Type figures published by the manufacturer. Not measured on this airframe."
+        }
+      ],
+      "rights": {
+        "owner": {
+          "label": "Registered owner",
+          "value": "Individual owner through a trust (demo)",
+          "state": "reported",
+          "evidence": "TRN0003/BILL"
+        },
+        "operator": {
+          "label": "Operator",
+          "value": "Owner operated (demo)",
+          "state": "unverified",
+          "evidence": null
+        },
+        "economic": [
+          {
+            "label": "Financing",
+            "value": "Loan security claimed by owner",
+            "state": "unverified",
+            "evidence": "TRN0003/LIEN"
+          },
+          {
+            "label": "Lease",
+            "value": "No lease recorded",
+            "state": "reported",
+            "evidence": "TRN0003/LIEN"
+          }
+        ],
+        "token": {
+          "label": "Token representation",
+          "value": "None issued",
+          "state": "verified",
+          "evidence": null
+        }
+      },
+      "history": [
+        {
+          "date": "2018-06-13",
+          "event": "Delivered new",
+          "detail": "Dassault Falcon 8X delivered to first owner.",
+          "state": "reported",
+          "evidence": null
+        },
+        {
+          "date": "2018-06-23",
+          "event": "First registration",
+          "detail": "Registered as N8XTR.",
+          "state": "verified",
+          "evidence": "TRN0003/REG"
+        },
+        {
+          "date": "2021-11-03",
+          "event": "Change of ownership",
+          "detail": "Transferred to the current owner.",
+          "state": "reported",
+          "evidence": "TRN0003/BILL"
+        },
+        {
+          "date": "2025-04-23",
+          "event": "Heavy maintenance check",
+          "detail": "Scheduled inspection released to service.",
+          "state": "reported",
+          "evidence": "TRN0003/MX"
+        },
+        {
+          "date": "2026-06-01",
+          "event": "Record structured on TRONAUT",
+          "detail": "Demo profile created. Not anchored onchain.",
+          "state": "verified",
+          "evidence": null
+        }
+      ],
+      "evidence": [
+        {
+          "id": "TRN0003/REG",
+          "title": "Certificate of registration",
+          "type": "Registration",
+          "source": "Civil aviation registry extract (demo)",
+          "reference": "DEMO/REGISTRATION/0003",
+          "uri": null,
+          "hash": "0xdfb4898ee10d00e5b9be946bc30522351cdc9e2b0bb27c97027562358be3d7b8",
+          "hashAlgorithm": "sha256",
+          "timestamp": "2026-01-13T09:00:00Z",
+          "state": "verified",
+          "attestation": "TRN0003/ATT/REG",
+          "anchor": null
+        },
+        {
+          "id": "TRN0003/BILL",
+          "title": "Bill of sale",
+          "type": "Title",
+          "source": "Transfer document held by closing agent (demo)",
+          "reference": "DEMO/TITLE/0003",
+          "uri": null,
+          "hash": "0xcc518ecd4d538c9b8747f933bb271f8aa9efeced4c3e41a6332a981c7278cb5e",
+          "hashAlgorithm": "sha256",
+          "timestamp": "2026-02-13T09:00:00Z",
+          "state": "reported",
+          "attestation": "TRN0003/ATT/TITLE",
+          "anchor": null
+        },
+        {
+          "id": "TRN0003/AW",
+          "title": "Airworthiness certificate",
+          "type": "Airworthiness",
+          "source": "Issued with the export and import file (demo)",
+          "reference": "DEMO/AIRWORTHINESS/0003",
+          "uri": null,
+          "hash": "0x83e627381a6c6a8f40adbed92e9f040545018d761f4d6211e6f09ed1e14c4d8b",
+          "hashAlgorithm": "sha256",
+          "timestamp": "2026-03-13T09:00:00Z",
+          "state": "unverified",
+          "attestation": null,
+          "anchor": null
+        },
+        {
+          "id": "TRN0003/MX",
+          "title": "Latest heavy check release",
+          "type": "Maintenance",
+          "source": "Maintenance organisation work package (demo)",
+          "reference": "DEMO/MAINTENANCE/0003",
+          "uri": null,
+          "hash": "0xa1296cbbae1400956f4ea203e8581be830c85f8779b682462f449b5c40df0a2b",
+          "hashAlgorithm": "sha256",
+          "timestamp": "2026-04-13T09:00:00Z",
+          "state": "reported",
+          "attestation": null,
+          "anchor": null
+        },
+        {
+          "id": "TRN0003/INS",
+          "title": "Hull insurance certificate",
+          "type": "Insurance",
+          "source": "Broker certificate of insurance (demo)",
+          "reference": "DEMO/INSURANCE/0003",
+          "uri": null,
+          "hash": "0xae89424228adf58ed01d948578a59866dfff1b4821c7b7abbb3cbe3ff3a4c856",
+          "hashAlgorithm": "sha256",
+          "timestamp": "2026-05-13T09:00:00Z",
+          "state": "reported",
+          "attestation": null,
+          "anchor": null
+        },
+        {
+          "id": "TRN0003/LIEN",
+          "title": "Lien and interest search",
+          "type": "Liens",
+          "source": "International registry search result (demo)",
+          "reference": "DEMO/LIENS/0003",
+          "uri": null,
+          "hash": "0x2c51fc55ca5d05cbb9853cf273803108b42dd16bd3546d427371e72a3b368531",
+          "hashAlgorithm": "sha256",
+          "timestamp": "2026-06-13T09:00:00Z",
+          "state": "unverified",
+          "attestation": null,
+          "anchor": null
+        }
+      ],
+      "attestations": [
+        {
+          "id": "TRN0003/ATT/REG",
+          "assetId": "TRN0003",
+          "type": "Registration confirmed",
+          "issuer": "Registry agent (demo)",
+          "issuerAddress": null,
+          "timestamp": "2026-02-20T12:00:00Z",
+          "evidence": "TRN0003/REG",
+          "state": "verified",
+          "tx": null,
+          "block": null
+        },
+        {
+          "id": "TRN0003/ATT/TITLE",
+          "assetId": "TRN0003",
+          "type": "Title chain reviewed",
+          "issuer": "Aviation counsel (demo)",
+          "issuerAddress": null,
+          "timestamp": "2026-03-04T15:30:00Z",
+          "evidence": "TRN0003/BILL",
+          "state": "reported",
+          "tx": null,
+          "block": null
+        }
+      ],
+      "onchain": {
+        "network": "Robinhood Chain",
+        "registry": null,
+        "onchainAssetId": null,
+        "tx": null,
+        "block": null,
+        "timestamp": null,
+        "metadataRef": null,
+        "evidenceRoot": "0xf5f994cccfec04c4c80cb675a6e816e55836ee0e7adfae03c6ec0d57b3eb2920",
+        "evidenceRootComputed": true
+      }
+    },
+    {
+      "assetId": "TRN0004",
+      "demo": true,
+      "registration": "N600TR",
+      "manufacturer": "Embraer",
+      "model": "Praetor 600",
+      "msn": "DEMO 6004",
+      "year": 2022,
+      "category": "Super midsize jet",
+      "status": "Active",
+      "verification": {
+        "registration": "verified",
+        "manufacturer": "verified",
+        "model": "verified",
+        "msn": "verified",
+        "year": "verified",
+        "category": "reported",
+        "status": "verified"
+      },
+      "fieldEvidence": {
+        "registration": "TRN0004/REG",
+        "msn": "TRN0004/REG",
+        "year": "TRN0004/AW",
+        "status": "TRN0004/MX"
+      },
+      "specs": [
+        {
+          "label": "Range",
+          "value": "4,018 nm",
+          "state": "reported",
+          "note": "Type figures published by the manufacturer. Not measured on this airframe."
+        },
+        {
+          "label": "Maximum seating",
+          "value": "12 passengers",
+          "state": "reported",
+          "note": "Type figures published by the manufacturer. Not measured on this airframe."
+        },
+        {
+          "label": "Engines",
+          "value": "2 × Honeywell HTF7500E",
+          "state": "reported",
+          "note": "Type figures published by the manufacturer. Not measured on this airframe."
+        },
+        {
+          "label": "Maximum speed",
+          "value": "Mach 0.83",
+          "state": "reported",
+          "note": "Type figures published by the manufacturer. Not measured on this airframe."
+        }
+      ],
+      "rights": {
+        "owner": {
+          "label": "Registered owner",
+          "value": "Corporate owner on file (demo)",
+          "state": "verified",
+          "evidence": "TRN0004/BILL"
+        },
+        "operator": {
+          "label": "Operator",
+          "value": "Private operator, not for hire (demo)",
+          "state": "verified",
+          "evidence": null
+        },
+        "economic": [
+          {
+            "label": "Financing",
+            "value": "Lender interest registered",
+            "state": "verified",
+            "evidence": "TRN0004/LIEN"
+          },
+          {
+            "label": "Lease",
+            "value": "No lease recorded",
+            "state": "verified",
+            "evidence": "TRN0004/LIEN"
+          }
+        ],
+        "token": {
+          "label": "Token representation",
+          "value": "None issued",
+          "state": "verified",
+          "evidence": null
+        }
+      },
+      "history": [
+        {
+          "date": "2022-07-14",
+          "event": "Delivered new",
+          "detail": "Embraer Praetor 600 delivered to first owner.",
+          "state": "reported",
+          "evidence": null
+        },
+        {
+          "date": "2022-07-24",
+          "event": "First registration",
+          "detail": "Registered as N600TR.",
+          "state": "verified",
+          "evidence": "TRN0004/REG"
+        },
+        {
+          "date": "2025-05-24",
+          "event": "Heavy maintenance check",
+          "detail": "Scheduled inspection released to service.",
+          "state": "reported",
+          "evidence": "TRN0004/MX"
+        },
+        {
+          "date": "2026-06-01",
+          "event": "Record structured on TRONAUT",
+          "detail": "Demo profile created. Not anchored onchain.",
+          "state": "verified",
+          "evidence": null
+        }
+      ],
+      "evidence": [
+        {
+          "id": "TRN0004/REG",
+          "title": "Certificate of registration",
+          "type": "Registration",
+          "source": "Civil aviation registry extract (demo)",
+          "reference": "DEMO/REGISTRATION/0004",
+          "uri": null,
+          "hash": "0x2ea36e8922f0ee275991127f2f1f255c5f6892c972aafedec40e9eee5f773df0",
+          "hashAlgorithm": "sha256",
+          "timestamp": "2026-01-14T09:00:00Z",
+          "state": "verified",
+          "attestation": "TRN0004/ATT/REG",
+          "anchor": null
+        },
+        {
+          "id": "TRN0004/BILL",
+          "title": "Bill of sale",
+          "type": "Title",
+          "source": "Transfer document held by closing agent (demo)",
+          "reference": "DEMO/TITLE/0004",
+          "uri": null,
+          "hash": "0x2c526360068b7426fec090d6c08d45a3c334fd230e87a57fc9e9dd7fc593c024",
+          "hashAlgorithm": "sha256",
+          "timestamp": "2026-02-14T09:00:00Z",
+          "state": "verified",
+          "attestation": "TRN0004/ATT/TITLE",
+          "anchor": null
+        },
+        {
+          "id": "TRN0004/AW",
+          "title": "Airworthiness certificate",
+          "type": "Airworthiness",
+          "source": "Issued with the export and import file (demo)",
+          "reference": "DEMO/AIRWORTHINESS/0004",
+          "uri": null,
+          "hash": "0xd85006a05cf43d72051847dfe504649a30b380cc016100e7b7e376aa46cd7c6e",
+          "hashAlgorithm": "sha256",
+          "timestamp": "2026-03-14T09:00:00Z",
+          "state": "verified",
+          "attestation": null,
+          "anchor": null
+        },
+        {
+          "id": "TRN0004/MX",
+          "title": "Latest heavy check release",
+          "type": "Maintenance",
+          "source": "Maintenance organisation work package (demo)",
+          "reference": "DEMO/MAINTENANCE/0004",
+          "uri": null,
+          "hash": "0x00b3b432fda3e937361373e721b747e5f47ac45852ab4122f578da2269ed1d77",
+          "hashAlgorithm": "sha256",
+          "timestamp": "2026-04-14T09:00:00Z",
+          "state": "reported",
+          "attestation": "TRN0004/ATT/MX",
+          "anchor": null
+        },
+        {
+          "id": "TRN0004/INS",
+          "title": "Hull insurance certificate",
+          "type": "Insurance",
+          "source": "Broker certificate of insurance (demo)",
+          "reference": "DEMO/INSURANCE/0004",
+          "uri": null,
+          "hash": "0xee2e1bc388ae1dae9666516cc5dedf6eae937a235de1aa683396f40e5a2be7b5",
+          "hashAlgorithm": "sha256",
+          "timestamp": "2026-05-14T09:00:00Z",
+          "state": "reported",
+          "attestation": null,
+          "anchor": null
+        },
+        {
+          "id": "TRN0004/LIEN",
+          "title": "Lien and interest search",
+          "type": "Liens",
+          "source": "International registry search result (demo)",
+          "reference": "DEMO/LIENS/0004",
+          "uri": null,
+          "hash": "0x755a67a8bb5252943977f4e1caa9e37d12626a3f023dc4611879a9646efc7447",
+          "hashAlgorithm": "sha256",
+          "timestamp": "2026-06-14T09:00:00Z",
+          "state": "verified",
+          "attestation": null,
+          "anchor": null
+        }
+      ],
+      "attestations": [
+        {
+          "id": "TRN0004/ATT/REG",
+          "assetId": "TRN0004",
+          "type": "Registration confirmed",
+          "issuer": "Registry agent (demo)",
+          "issuerAddress": null,
+          "timestamp": "2026-02-20T12:00:00Z",
+          "evidence": "TRN0004/REG",
+          "state": "verified",
+          "tx": null,
+          "block": null
+        },
+        {
+          "id": "TRN0004/ATT/TITLE",
+          "assetId": "TRN0004",
+          "type": "Title chain reviewed",
+          "issuer": "Aviation counsel (demo)",
+          "issuerAddress": null,
+          "timestamp": "2026-03-04T15:30:00Z",
+          "evidence": "TRN0004/BILL",
+          "state": "verified",
+          "tx": null,
+          "block": null
+        },
+        {
+          "id": "TRN0004/ATT/MX",
+          "assetId": "TRN0004",
+          "type": "Records inspection",
+          "issuer": "Independent inspector (demo)",
+          "issuerAddress": null,
+          "timestamp": "2026-05-11T08:15:00Z",
+          "evidence": "TRN0004/MX",
+          "state": "verified",
+          "tx": null,
+          "block": null
+        }
+      ],
+      "onchain": {
+        "network": "Robinhood Chain",
+        "registry": null,
+        "onchainAssetId": null,
+        "tx": null,
+        "block": null,
+        "timestamp": null,
+        "metadataRef": null,
+        "evidenceRoot": "0x59b689c66eec1721d10991508fe5b5782bac40ef566ad96cce40e97e3641f018",
+        "evidenceRootComputed": true
+      }
+    },
+    {
+      "assetId": "TRN0005",
+      "demo": true,
+      "registration": "N350TR",
+      "manufacturer": "Bombardier",
+      "model": "Challenger 350",
+      "msn": "DEMO 3505",
+      "year": 2017,
+      "category": "Super midsize jet",
+      "status": "In maintenance",
+      "verification": {
+        "registration": "verified",
+        "manufacturer": "verified",
+        "model": "verified",
+        "msn": "verified",
+        "year": "reported",
+        "category": "reported",
+        "status": "reported"
+      },
+      "fieldEvidence": {
+        "registration": "TRN0005/REG",
+        "msn": "TRN0005/REG",
+        "year": "TRN0005/AW",
+        "status": "TRN0005/MX"
+      },
+      "specs": [
+        {
+          "label": "Range",
+          "value": "3,200 nm",
+          "state": "reported",
+          "note": "Type figures published by the manufacturer. Not measured on this airframe."
+        },
+        {
+          "label": "Maximum seating",
+          "value": "10 passengers",
+          "state": "reported",
+          "note": "Type figures published by the manufacturer. Not measured on this airframe."
+        },
+        {
+          "label": "Engines",
+          "value": "2 × Honeywell HTF7350",
+          "state": "reported",
+          "note": "Type figures published by the manufacturer. Not measured on this airframe."
+        },
+        {
+          "label": "Maximum speed",
+          "value": "Mach 0.83",
+          "state": "reported",
+          "note": "Type figures published by the manufacturer. Not measured on this airframe."
+        }
+      ],
+      "rights": {
+        "owner": {
+          "label": "Registered owner",
+          "value": "Fractional program owner (demo)",
+          "state": "reported",
+          "evidence": "TRN0005/BILL"
+        },
+        "operator": {
+          "label": "Operator",
+          "value": "Fractional program manager (demo)",
+          "state": "reported",
+          "evidence": null
+        },
+        "economic": [
+          {
+            "label": "Shares",
+            "value": "Fractional interests reported, not itemised",
+            "state": "reported",
+            "evidence": "TRN0005/LIEN"
+          },
+          {
+            "label": "Financing",
+            "value": "Unknown",
+            "state": "unknown",
+            "evidence": "TRN0005/LIEN"
+          }
+        ],
+        "token": {
+          "label": "Token representation",
+          "value": "None issued",
+          "state": "verified",
+          "evidence": null
+        }
+      },
+      "history": [
+        {
+          "date": "2017-08-15",
+          "event": "Delivered new",
+          "detail": "Bombardier Challenger 350 delivered to first owner.",
+          "state": "reported",
+          "evidence": null
+        },
+        {
+          "date": "2017-08-25",
+          "event": "First registration",
+          "detail": "Registered as N350TR.",
+          "state": "verified",
+          "evidence": "TRN0005/REG"
+        },
+        {
+          "date": "2020-11-05",
+          "event": "Change of ownership",
+          "detail": "Transferred to the current owner.",
+          "state": "reported",
+          "evidence": "TRN0005/BILL"
+        },
+        {
+          "date": "2025-06-25",
+          "event": "Heavy maintenance check",
+          "detail": "Scheduled inspection in progress.",
+          "state": "unverified",
+          "evidence": "TRN0005/MX"
+        },
+        {
+          "date": "2026-06-01",
+          "event": "Record structured on TRONAUT",
+          "detail": "Demo profile created. Not anchored onchain.",
+          "state": "verified",
+          "evidence": null
+        }
+      ],
+      "evidence": [
+        {
+          "id": "TRN0005/REG",
+          "title": "Certificate of registration",
+          "type": "Registration",
+          "source": "Civil aviation registry extract (demo)",
+          "reference": "DEMO/REGISTRATION/0005",
+          "uri": null,
+          "hash": "0xa7782221a0ac1c4a778c13a392bad9c4bc6eacc4f034155751411c4dcf6788c5",
+          "hashAlgorithm": "sha256",
+          "timestamp": "2026-01-15T09:00:00Z",
+          "state": "verified",
+          "attestation": "TRN0005/ATT/REG",
+          "anchor": null
+        },
+        {
+          "id": "TRN0005/BILL",
+          "title": "Bill of sale",
+          "type": "Title",
+          "source": "Transfer document held by closing agent (demo)",
+          "reference": "DEMO/TITLE/0005",
+          "uri": null,
+          "hash": "0x328984e1586a93ace2ffc5332a138530c83a045a4d14dd36af3448bd3ffefb70",
+          "hashAlgorithm": "sha256",
+          "timestamp": "2026-02-15T09:00:00Z",
+          "state": "reported",
+          "attestation": "TRN0005/ATT/TITLE",
+          "anchor": null
+        },
+        {
+          "id": "TRN0005/AW",
+          "title": "Airworthiness certificate",
+          "type": "Airworthiness",
+          "source": "Issued with the export and import file (demo)",
+          "reference": "DEMO/AIRWORTHINESS/0005",
+          "uri": null,
+          "hash": "0x2685fbbb4ea19bf1eaaa8e5eb0fd6f43a4db114c087c51f3e3ef85cfbe061559",
+          "hashAlgorithm": "sha256",
+          "timestamp": "2026-03-15T09:00:00Z",
+          "state": "reported",
+          "attestation": null,
+          "anchor": null
+        },
+        {
+          "id": "TRN0005/MX",
+          "title": "Latest heavy check release",
+          "type": "Maintenance",
+          "source": "Maintenance organisation work package (demo)",
+          "reference": "DEMO/MAINTENANCE/0005",
+          "uri": null,
+          "hash": "0xcfaaef4681e7a5fa3be7f406713acbb9d3fd00a7a6a6842bbccd3932a05abf58",
+          "hashAlgorithm": "sha256",
+          "timestamp": "2026-04-15T09:00:00Z",
+          "state": "unverified",
+          "attestation": null,
+          "anchor": null
+        },
+        {
+          "id": "TRN0005/INS",
+          "title": "Hull insurance certificate",
+          "type": "Insurance",
+          "source": "Broker certificate of insurance (demo)",
+          "reference": "DEMO/INSURANCE/0005",
+          "uri": null,
+          "hash": "0x4d70b02023d16ec113d3d36559368381fb5f31daf6000e872415fff98fd4c405",
+          "hashAlgorithm": "sha256",
+          "timestamp": "2026-05-15T09:00:00Z",
+          "state": "reported",
+          "attestation": null,
+          "anchor": null
+        },
+        {
+          "id": "TRN0005/LIEN",
+          "title": "Lien and interest search",
+          "type": "Liens",
+          "source": "International registry search result (demo)",
+          "reference": "DEMO/LIENS/0005",
+          "uri": null,
+          "hash": "0x9e1c8972045c16554bc280840afad91886631c92bd7e28161f2a94afdce6c471",
+          "hashAlgorithm": "sha256",
+          "timestamp": "2026-06-15T09:00:00Z",
+          "state": "reported",
+          "attestation": null,
+          "anchor": null
+        }
+      ],
+      "attestations": [
+        {
+          "id": "TRN0005/ATT/REG",
+          "assetId": "TRN0005",
+          "type": "Registration confirmed",
+          "issuer": "Registry agent (demo)",
+          "issuerAddress": null,
+          "timestamp": "2026-02-20T12:00:00Z",
+          "evidence": "TRN0005/REG",
+          "state": "verified",
+          "tx": null,
+          "block": null
+        },
+        {
+          "id": "TRN0005/ATT/TITLE",
+          "assetId": "TRN0005",
+          "type": "Title chain reviewed",
+          "issuer": "Aviation counsel (demo)",
+          "issuerAddress": null,
+          "timestamp": "2026-03-04T15:30:00Z",
+          "evidence": "TRN0005/BILL",
+          "state": "reported",
+          "tx": null,
+          "block": null
+        }
+      ],
+      "onchain": {
+        "network": "Robinhood Chain",
+        "registry": null,
+        "onchainAssetId": null,
+        "tx": null,
+        "block": null,
+        "timestamp": null,
+        "metadataRef": null,
+        "evidenceRoot": "0x27b92fe6f20b0ae1c7b42806cfaab3c3162fe6d487591a69cb9726f6f9b9e038",
+        "evidenceRootComputed": true
+      }
+    },
+    {
+      "assetId": "TRN0006",
+      "demo": true,
+      "registration": "N24TR",
+      "manufacturer": "Pilatus",
+      "model": "PC 24",
+      "msn": "DEMO 2406",
+      "year": 2020,
+      "category": "Light jet",
+      "status": "Active",
+      "verification": {
+        "registration": "reported",
+        "manufacturer": "verified",
+        "model": "verified",
+        "msn": "unverified",
+        "year": "reported",
+        "category": "reported",
+        "status": "unknown"
+      },
+      "fieldEvidence": {
+        "registration": "TRN0006/REG",
+        "msn": "TRN0006/REG",
+        "year": "TRN0006/AW",
+        "status": "TRN0006/MX"
+      },
+      "specs": [
+        {
+          "label": "Range",
+          "value": "2,000 nm",
+          "state": "reported",
+          "note": "Type figures published by the manufacturer. Not measured on this airframe."
+        },
+        {
+          "label": "Maximum seating",
+          "value": "10 passengers",
+          "state": "reported",
+          "note": "Type figures published by the manufacturer. Not measured on this airframe."
+        },
+        {
+          "label": "Engines",
+          "value": "2 × Williams FJ44 4A",
+          "state": "reported",
+          "note": "Type figures published by the manufacturer. Not measured on this airframe."
+        },
+        {
+          "label": "Maximum cruise",
+          "value": "440 kt",
+          "state": "reported",
+          "note": "Type figures published by the manufacturer. Not measured on this airframe."
+        }
+      ],
+      "rights": {
+        "owner": {
+          "label": "Registered owner",
+          "value": "Owner not yet evidenced (demo)",
+          "state": "unknown",
+          "evidence": null
+        },
+        "operator": {
+          "label": "Operator",
+          "value": "Operator claimed, not evidenced (demo)",
+          "state": "unverified",
+          "evidence": null
+        },
+        "economic": [
+          {
+            "label": "Financing",
+            "value": "Unknown",
+            "state": "unknown",
+            "evidence": "TRN0006/LIEN"
+          },
+          {
+            "label": "Lease",
+            "value": "Unknown",
+            "state": "unknown",
+            "evidence": "TRN0006/LIEN"
+          }
+        ],
+        "token": {
+          "label": "Token representation",
+          "value": "None issued",
+          "state": "verified",
+          "evidence": null
+        }
+      },
+      "history": [
+        {
+          "date": "2020-03-16",
+          "event": "Delivered new",
+          "detail": "Pilatus PC 24 delivered to first owner.",
+          "state": "reported",
+          "evidence": null
+        },
+        {
+          "date": "2020-03-26",
+          "event": "First registration",
+          "detail": "Registered as N24TR.",
+          "state": "reported",
+          "evidence": "TRN0006/REG"
+        },
+        {
+          "date": "2025-07-26",
+          "event": "Heavy maintenance check",
+          "detail": "Scheduled inspection released to service.",
+          "state": "reported",
+          "evidence": "TRN0006/MX"
+        },
+        {
+          "date": "2026-06-01",
+          "event": "Record structured on TRONAUT",
+          "detail": "Demo profile created. Not anchored onchain.",
+          "state": "verified",
+          "evidence": null
+        }
+      ],
+      "evidence": [
+        {
+          "id": "TRN0006/REG",
+          "title": "Certificate of registration",
+          "type": "Registration",
+          "source": "Civil aviation registry extract (demo)",
+          "reference": "DEMO/REGISTRATION/0006",
+          "uri": null,
+          "hash": "0x74bbc7df56e295b6bad586b85ace47ce26e0336707925cbed35ee3f4e7fefbb9",
+          "hashAlgorithm": "sha256",
+          "timestamp": "2026-01-16T09:00:00Z",
+          "state": "reported",
+          "attestation": "TRN0006/ATT/REG",
+          "anchor": null
+        },
+        {
+          "id": "TRN0006/AW",
+          "title": "Airworthiness certificate",
+          "type": "Airworthiness",
+          "source": "Issued with the export and import file (demo)",
+          "reference": "DEMO/AIRWORTHINESS/0006",
+          "uri": null,
+          "hash": "0x6260259b142f0f7d291e69f23dfe388faa5d8e93b6c56e81dcbe89126f7eaa85",
+          "hashAlgorithm": "sha256",
+          "timestamp": "2026-03-16T09:00:00Z",
+          "state": "unknown",
+          "attestation": null,
+          "anchor": null
+        },
+        {
+          "id": "TRN0006/MX",
+          "title": "Latest heavy check release",
+          "type": "Maintenance",
+          "source": "Maintenance organisation work package (demo)",
+          "reference": "DEMO/MAINTENANCE/0006",
+          "uri": null,
+          "hash": "0xd55ac59486a056d0fdc5feaed1b188a79256f03e2cba2ae92022f94477434b6b",
+          "hashAlgorithm": "sha256",
+          "timestamp": "2026-04-16T09:00:00Z",
+          "state": "reported",
+          "attestation": null,
+          "anchor": null
+        },
+        {
+          "id": "TRN0006/LIEN",
+          "title": "Lien and interest search",
+          "type": "Liens",
+          "source": "International registry search result (demo)",
+          "reference": "DEMO/LIENS/0006",
+          "uri": null,
+          "hash": "0x87cd75c70066840afb5dbd33ae2b96f9d0b43173295482b6e3222ef173cf99a8",
+          "hashAlgorithm": "sha256",
+          "timestamp": "2026-06-16T09:00:00Z",
+          "state": "unknown",
+          "attestation": null,
+          "anchor": null
+        }
+      ],
+      "attestations": [
+        {
+          "id": "TRN0006/ATT/REG",
+          "assetId": "TRN0006",
+          "type": "Registration confirmed",
+          "issuer": "Registry agent (demo)",
+          "issuerAddress": null,
+          "timestamp": "2026-02-20T12:00:00Z",
+          "evidence": "TRN0006/REG",
+          "state": "reported",
+          "tx": null,
+          "block": null
+        }
+      ],
+      "onchain": {
+        "network": "Robinhood Chain",
+        "registry": null,
+        "onchainAssetId": null,
+        "tx": null,
+        "block": null,
+        "timestamp": null,
+        "metadataRef": null,
+        "evidenceRoot": "0x31c3f5c125a37e7512170a9a59e8c2cfebb7a86bc4dcbc5f9e6154999ac91fa8",
+        "evidenceRootComputed": true
+      }
+    },
+    {
+      "assetId": "TRN0007",
+      "demo": true,
+      "registration": "N280TR",
+      "manufacturer": "Gulfstream",
+      "model": "G280",
+      "msn": "DEMO 2807",
+      "year": 2016,
+      "category": "Super midsize jet",
+      "status": "Stored",
+      "verification": {
+        "registration": "verified",
+        "manufacturer": "verified",
+        "model": "verified",
+        "msn": "verified",
+        "year": "verified",
+        "category": "reported",
+        "status": "reported"
+      },
+      "fieldEvidence": {
+        "registration": "TRN0007/REG",
+        "msn": "TRN0007/REG",
+        "year": "TRN0007/AW",
+        "status": "TRN0007/MX"
+      },
+      "specs": [
+        {
+          "label": "Range",
+          "value": "3,600 nm",
+          "state": "reported",
+          "note": "Type figures published by the manufacturer. Not measured on this airframe."
+        },
+        {
+          "label": "Maximum seating",
+          "value": "10 passengers",
+          "state": "reported",
+          "note": "Type figures published by the manufacturer. Not measured on this airframe."
+        },
+        {
+          "label": "Engines",
+          "value": "2 × Honeywell HTF7250G",
+          "state": "reported",
+          "note": "Type figures published by the manufacturer. Not measured on this airframe."
+        },
+        {
+          "label": "Maximum speed",
+          "value": "Mach 0.85",
+          "state": "reported",
+          "note": "Type figures published by the manufacturer. Not measured on this airframe."
+        }
+      ],
+      "rights": {
+        "owner": {
+          "label": "Registered owner",
+          "value": "Corporate owner on file (demo)",
+          "state": "verified",
+          "evidence": "TRN0007/BILL"
+        },
+        "operator": {
+          "label": "Operator",
+          "value": "No active operator (demo)",
+          "state": "reported",
+          "evidence": null
+        },
+        "economic": [
+          {
+            "label": "Financing",
+            "value": "Mortgage released",
+            "state": "verified",
+            "evidence": "TRN0007/LIEN"
+          },
+          {
+            "label": "Lease",
+            "value": "Lease ended",
+            "state": "reported",
+            "evidence": "TRN0007/LIEN"
+          }
+        ],
+        "token": {
+          "label": "Token representation",
+          "value": "None issued",
+          "state": "verified",
+          "evidence": null
+        }
+      },
+      "history": [
+        {
+          "date": "2016-04-17",
+          "event": "Delivered new",
+          "detail": "Gulfstream G280 delivered to first owner.",
+          "state": "reported",
+          "evidence": null
+        },
+        {
+          "date": "2016-04-27",
+          "event": "First registration",
+          "detail": "Registered as N280TR.",
+          "state": "verified",
+          "evidence": "TRN0007/REG"
+        },
+        {
+          "date": "2019-11-07",
+          "event": "Change of ownership",
+          "detail": "Transferred to the current owner.",
+          "state": "verified",
+          "evidence": "TRN0007/BILL"
+        },
+        {
+          "date": "2025-08-27",
+          "event": "Heavy maintenance check",
+          "detail": "Scheduled inspection released to service.",
+          "state": "reported",
+          "evidence": "TRN0007/MX"
+        },
+        {
+          "date": "2026-06-01",
+          "event": "Record structured on TRONAUT",
+          "detail": "Demo profile created. Not anchored onchain.",
+          "state": "verified",
+          "evidence": null
+        }
+      ],
+      "evidence": [
+        {
+          "id": "TRN0007/REG",
+          "title": "Certificate of registration",
+          "type": "Registration",
+          "source": "Civil aviation registry extract (demo)",
+          "reference": "DEMO/REGISTRATION/0007",
+          "uri": null,
+          "hash": "0xf70b0a098351c97f38ba7bf5a26cc3eaea383adeafd8f8f6e30084f2361b1d40",
+          "hashAlgorithm": "sha256",
+          "timestamp": "2026-01-17T09:00:00Z",
+          "state": "verified",
+          "attestation": "TRN0007/ATT/REG",
+          "anchor": null
+        },
+        {
+          "id": "TRN0007/BILL",
+          "title": "Bill of sale",
+          "type": "Title",
+          "source": "Transfer document held by closing agent (demo)",
+          "reference": "DEMO/TITLE/0007",
+          "uri": null,
+          "hash": "0x8b6eaab8e924eafc780b51c69a58603d353d8bcce2ce654ec7ecb5ccbe5ed227",
+          "hashAlgorithm": "sha256",
+          "timestamp": "2026-02-17T09:00:00Z",
+          "state": "verified",
+          "attestation": "TRN0007/ATT/TITLE",
+          "anchor": null
+        },
+        {
+          "id": "TRN0007/AW",
+          "title": "Airworthiness certificate",
+          "type": "Airworthiness",
+          "source": "Issued with the export and import file (demo)",
+          "reference": "DEMO/AIRWORTHINESS/0007",
+          "uri": null,
+          "hash": "0xcf82905dfae0ee8e47ddab328cdeb807a9d4658514061b6f7da88bcb5385a33d",
+          "hashAlgorithm": "sha256",
+          "timestamp": "2026-03-17T09:00:00Z",
+          "state": "reported",
+          "attestation": null,
+          "anchor": null
+        },
+        {
+          "id": "TRN0007/MX",
+          "title": "Latest heavy check release",
+          "type": "Maintenance",
+          "source": "Maintenance organisation work package (demo)",
+          "reference": "DEMO/MAINTENANCE/0007",
+          "uri": null,
+          "hash": "0xfb7d448a8c852487a1ddb91ef7bba73e0dd0d8b200fc7ccef96edef6eef0f73e",
+          "hashAlgorithm": "sha256",
+          "timestamp": "2026-04-17T09:00:00Z",
+          "state": "reported",
+          "attestation": "TRN0007/ATT/MX",
+          "anchor": null
+        },
+        {
+          "id": "TRN0007/INS",
+          "title": "Hull insurance certificate",
+          "type": "Insurance",
+          "source": "Broker certificate of insurance (demo)",
+          "reference": "DEMO/INSURANCE/0007",
+          "uri": null,
+          "hash": "0x02a09686f881e669e5a4138453ef8d0cf7a6b12a06e0b353dea47f69cf4b82a3",
+          "hashAlgorithm": "sha256",
+          "timestamp": "2026-05-17T09:00:00Z",
+          "state": "reported",
+          "attestation": null,
+          "anchor": null
+        },
+        {
+          "id": "TRN0007/LIEN",
+          "title": "Lien and interest search",
+          "type": "Liens",
+          "source": "International registry search result (demo)",
+          "reference": "DEMO/LIENS/0007",
+          "uri": null,
+          "hash": "0xba25f7980dd6e15d0e3999e79c23112ed562036253c5b3cac37d6628030a77b2",
+          "hashAlgorithm": "sha256",
+          "timestamp": "2026-06-17T09:00:00Z",
+          "state": "verified",
+          "attestation": null,
+          "anchor": null
+        }
+      ],
+      "attestations": [
+        {
+          "id": "TRN0007/ATT/REG",
+          "assetId": "TRN0007",
+          "type": "Registration confirmed",
+          "issuer": "Registry agent (demo)",
+          "issuerAddress": null,
+          "timestamp": "2026-02-20T12:00:00Z",
+          "evidence": "TRN0007/REG",
+          "state": "verified",
+          "tx": null,
+          "block": null
+        },
+        {
+          "id": "TRN0007/ATT/TITLE",
+          "assetId": "TRN0007",
+          "type": "Title chain reviewed",
+          "issuer": "Aviation counsel (demo)",
+          "issuerAddress": null,
+          "timestamp": "2026-03-04T15:30:00Z",
+          "evidence": "TRN0007/BILL",
+          "state": "verified",
+          "tx": null,
+          "block": null
+        },
+        {
+          "id": "TRN0007/ATT/MX",
+          "assetId": "TRN0007",
+          "type": "Records inspection",
+          "issuer": "Independent inspector (demo)",
+          "issuerAddress": null,
+          "timestamp": "2026-05-11T08:15:00Z",
+          "evidence": "TRN0007/MX",
+          "state": "reported",
+          "tx": null,
+          "block": null
+        }
+      ],
+      "onchain": {
+        "network": "Robinhood Chain",
+        "registry": null,
+        "onchainAssetId": null,
+        "tx": null,
+        "block": null,
+        "timestamp": null,
+        "metadataRef": null,
+        "evidenceRoot": "0xfca802ef40f2e5a6285107f396b6b478750f7815bac21eb3b468a66e075d89ca",
+        "evidenceRootComputed": true
+      }
+    },
+    {
+      "assetId": "TRN0008",
+      "demo": true,
+      "registration": "N68TR",
+      "manufacturer": "Textron Aviation",
+      "model": "Citation Latitude",
+      "msn": "DEMO 6808",
+      "year": 2019,
+      "category": "Midsize jet",
+      "status": "Active",
+      "verification": {
+        "registration": "verified",
+        "manufacturer": "verified",
+        "model": "verified",
+        "msn": "reported",
+        "year": "reported",
+        "category": "reported",
+        "status": "reported"
+      },
+      "fieldEvidence": {
+        "registration": "TRN0008/REG",
+        "msn": "TRN0008/REG",
+        "year": "TRN0008/AW",
+        "status": "TRN0008/MX"
+      },
+      "specs": [
+        {
+          "label": "Range",
+          "value": "2,700 nm",
+          "state": "reported",
+          "note": "Type figures published by the manufacturer. Not measured on this airframe."
+        },
+        {
+          "label": "Maximum seating",
+          "value": "9 passengers",
+          "state": "reported",
+          "note": "Type figures published by the manufacturer. Not measured on this airframe."
+        },
+        {
+          "label": "Engines",
+          "value": "2 × Pratt & Whitney PW306D1",
+          "state": "reported",
+          "note": "Type figures published by the manufacturer. Not measured on this airframe."
+        },
+        {
+          "label": "Maximum cruise",
+          "value": "446 kt",
+          "state": "reported",
+          "note": "Type figures published by the manufacturer. Not measured on this airframe."
+        }
+      ],
+      "rights": {
+        "owner": {
+          "label": "Registered owner",
+          "value": "Corporate owner on file (demo)",
+          "state": "reported",
+          "evidence": "TRN0008/BILL"
+        },
+        "operator": {
+          "label": "Operator",
+          "value": "Private operator, not for hire (demo)",
+          "state": "reported",
+          "evidence": null
+        },
+        "economic": [
+          {
+            "label": "Financing",
+            "value": "No financing recorded",
+            "state": "reported",
+            "evidence": "TRN0008/LIEN"
+          },
+          {
+            "label": "Lease",
+            "value": "No lease recorded",
+            "state": "reported",
+            "evidence": "TRN0008/LIEN"
+          }
+        ],
+        "token": {
+          "label": "Token representation",
+          "value": "None issued",
+          "state": "verified",
+          "evidence": null
+        }
+      },
+      "history": [
+        {
+          "date": "2019-05-18",
+          "event": "Delivered new",
+          "detail": "Textron Aviation Citation Latitude delivered to first owner.",
+          "state": "reported",
+          "evidence": null
+        },
+        {
+          "date": "2019-05-28",
+          "event": "First registration",
+          "detail": "Registered as N68TR.",
+          "state": "verified",
+          "evidence": "TRN0008/REG"
+        },
+        {
+          "date": "2025-01-28",
+          "event": "Heavy maintenance check",
+          "detail": "Scheduled inspection released to service.",
+          "state": "reported",
+          "evidence": "TRN0008/MX"
+        },
+        {
+          "date": "2026-06-01",
+          "event": "Record structured on TRONAUT",
+          "detail": "Demo profile created. Not anchored onchain.",
+          "state": "verified",
+          "evidence": null
+        }
+      ],
+      "evidence": [
+        {
+          "id": "TRN0008/REG",
+          "title": "Certificate of registration",
+          "type": "Registration",
+          "source": "Civil aviation registry extract (demo)",
+          "reference": "DEMO/REGISTRATION/0008",
+          "uri": null,
+          "hash": "0xff97613df2c9783a73e92942cd01e20e8d54d8ca9dd66525525a375b25095423",
+          "hashAlgorithm": "sha256",
+          "timestamp": "2026-01-18T09:00:00Z",
+          "state": "verified",
+          "attestation": "TRN0008/ATT/REG",
+          "anchor": null
+        },
+        {
+          "id": "TRN0008/BILL",
+          "title": "Bill of sale",
+          "type": "Title",
+          "source": "Transfer document held by closing agent (demo)",
+          "reference": "DEMO/TITLE/0008",
+          "uri": null,
+          "hash": "0xbf88d1c6d8aea7b018fb23acc559e1a09b01f071007f2d0d5ac3eb3210cc7802",
+          "hashAlgorithm": "sha256",
+          "timestamp": "2026-02-18T09:00:00Z",
+          "state": "reported",
+          "attestation": "TRN0008/ATT/TITLE",
+          "anchor": null
+        },
+        {
+          "id": "TRN0008/AW",
+          "title": "Airworthiness certificate",
+          "type": "Airworthiness",
+          "source": "Issued with the export and import file (demo)",
+          "reference": "DEMO/AIRWORTHINESS/0008",
+          "uri": null,
+          "hash": "0xe1e2de246ad5fa88278c203ea774c5126fac7e77b5eef56df771639db7738797",
+          "hashAlgorithm": "sha256",
+          "timestamp": "2026-03-18T09:00:00Z",
+          "state": "reported",
+          "attestation": null,
+          "anchor": null
+        },
+        {
+          "id": "TRN0008/MX",
+          "title": "Latest heavy check release",
+          "type": "Maintenance",
+          "source": "Maintenance organisation work package (demo)",
+          "reference": "DEMO/MAINTENANCE/0008",
+          "uri": null,
+          "hash": "0x9b09d6769959b5999938dbcf1886cf59f6fabc5ede982190cb1489aa5928dbc8",
+          "hashAlgorithm": "sha256",
+          "timestamp": "2026-04-18T09:00:00Z",
+          "state": "reported",
+          "attestation": null,
+          "anchor": null
+        },
+        {
+          "id": "TRN0008/INS",
+          "title": "Hull insurance certificate",
+          "type": "Insurance",
+          "source": "Broker certificate of insurance (demo)",
+          "reference": "DEMO/INSURANCE/0008",
+          "uri": null,
+          "hash": "0x6b558598039c51d6cfd97ad6b2e81ee531aef7b1788a2d6eab8dbe150ea400b3",
+          "hashAlgorithm": "sha256",
+          "timestamp": "2026-05-18T09:00:00Z",
+          "state": "reported",
+          "attestation": null,
+          "anchor": null
+        },
+        {
+          "id": "TRN0008/LIEN",
+          "title": "Lien and interest search",
+          "type": "Liens",
+          "source": "International registry search result (demo)",
+          "reference": "DEMO/LIENS/0008",
+          "uri": null,
+          "hash": "0x3118afe58e885e1a78268ff42a6525a373d6adfd23c32e38cfcc04b08a520baf",
+          "hashAlgorithm": "sha256",
+          "timestamp": "2026-06-18T09:00:00Z",
+          "state": "reported",
+          "attestation": null,
+          "anchor": null
+        }
+      ],
+      "attestations": [
+        {
+          "id": "TRN0008/ATT/REG",
+          "assetId": "TRN0008",
+          "type": "Registration confirmed",
+          "issuer": "Registry agent (demo)",
+          "issuerAddress": null,
+          "timestamp": "2026-02-20T12:00:00Z",
+          "evidence": "TRN0008/REG",
+          "state": "verified",
+          "tx": null,
+          "block": null
+        },
+        {
+          "id": "TRN0008/ATT/TITLE",
+          "assetId": "TRN0008",
+          "type": "Title chain reviewed",
+          "issuer": "Aviation counsel (demo)",
+          "issuerAddress": null,
+          "timestamp": "2026-03-04T15:30:00Z",
+          "evidence": "TRN0008/BILL",
+          "state": "reported",
+          "tx": null,
+          "block": null
+        }
+      ],
+      "onchain": {
+        "network": "Robinhood Chain",
+        "registry": null,
+        "onchainAssetId": null,
+        "tx": null,
+        "block": null,
+        "timestamp": null,
+        "metadataRef": null,
+        "evidenceRoot": "0xc040a63dcb3c1e42acfd7864b9acb9e22171b7f50da7b0e6347c9b9b770873db",
+        "evidenceRootComputed": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "tronaut-web",
+  "private": true,
+  "type": "module",
+  "description": "TRONAUT website and Robinhood Chain dapp. Static HTML, CSS and JS; no build step.",
+  "scripts": {
+    "sync": "node tools/sync-partials.mjs",
+    "check": "node tools/sync-partials.mjs --check && node tools/check-copy.mjs && node --test test/data.test.mjs test/config.test.mjs",
+    "check:browser": "node tools/check-browser.mjs"
+  },
+  "engines": { "node": ">=20" }
+}
