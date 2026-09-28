@@ -78,8 +78,15 @@ function renderToken() {
     text.textContent = token.text;
     block.dataset.state = token.launched ? "live" : "soon";
     if (copy) {
-      copy.hidden = !token.launched;
-      if (token.launched) { copy.setAttribute("data-copy", token.text); copy.setAttribute("aria-label", "Copy token address"); }
+      // The button is always shown. Before launch it copies nothing and says so.
+      copy.hidden = false;
+      if (token.launched) copy.setAttribute("data-copy", token.text);
+      else copy.removeAttribute("data-copy");
+      copy.setAttribute("aria-label", token.launched ? "Copy token address" : "Token address coming soon");
+      if (!copy.__soonBound) {
+        copy.__soonBound = true;
+        copy.addEventListener("click", function () { if (!copy.hasAttribute("data-copy")) toast("Token address coming soon"); });
+      }
     }
   });
 }
