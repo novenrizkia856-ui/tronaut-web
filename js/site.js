@@ -1,10 +1,10 @@
 /* Shared behaviour for every page: header wallet and network controls, the
    current page marker and live chain facts. Wallet controls reuse the header
    nav items, so they look like the rest of the navigation. */
-import { CHAIN, CONTRACTS } from "./config.js";
+import { CHAIN, CONTRACTS, TOKEN_ADDRESS } from "./config.js";
 import { wallet, onWallet, connect, switchNetwork, isCorrectChain, shortAddress, latestBlock, explorer, readableError } from "./web3.js";
 import { resolveMode } from "./contracts.js";
-import { toast, hideDuplicates } from "./ui.js";
+import { toast, hideDuplicates, tokenDisplay } from "./ui.js";
 
 let mode = null;
 
@@ -70,6 +70,20 @@ async function onNetworkClick(e) {
   }
 }
 
+function renderToken() {
+  const token = tokenDisplay(TOKEN_ADDRESS);
+  document.querySelectorAll("[data-token]").forEach(function (block) {
+    const text = block.querySelector("[data-token-address]");
+    const copy = block.querySelector("[data-token-copy]");
+    text.textContent = token.text;
+    block.dataset.state = token.launched ? "live" : "soon";
+    if (copy) {
+      copy.hidden = !token.launched;
+      if (token.launched) { copy.setAttribute("data-copy", token.text); copy.setAttribute("aria-label", "Copy token address"); }
+    }
+  });
+}
+
 function markCurrentPage() {
   const page = document.documentElement.getAttribute("data-page");
   document.querySelectorAll("[data-nav]").forEach(function (a) {
@@ -113,6 +127,7 @@ async function chainFacts() {
 document.querySelectorAll("[data-wallet-button]").forEach(function (b) { b.addEventListener("click", onWalletClick); });
 document.querySelectorAll("[data-network-status]").forEach(function (b) { b.addEventListener("click", onNetworkClick); });
 markCurrentPage();
+renderToken();
 hideDuplicates(document);
 onWallet(renderWallet);
 resolveMode().then(function (s) { mode = s.mode; renderWallet(); }).catch(function () { mode = "demo"; renderWallet(); });

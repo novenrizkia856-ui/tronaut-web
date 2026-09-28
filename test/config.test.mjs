@@ -39,3 +39,13 @@ test("a missing deployment resolves to demo mode with reasons", async () => {
   assert.equal(state.mode, "demo");
   assert.ok(state.checks.some((c) => !c.ok));
 });
+
+import { TOKEN_ADDRESS } from "../js/config.js";
+import { tokenDisplay } from "../js/ui.js";
+
+test("token address: empty or null shows Coming soon, anything else shows as is", () => {
+  for (const v of ["", null, undefined, "   "]) assert.deepEqual(tokenDisplay(v), { launched: false, text: "Coming soon" });
+  assert.deepEqual(tokenDisplay("0xAbC0000000000000000000000000000000000001"), { launched: true, text: "0xAbC0000000000000000000000000000000000001" });
+  assert.equal(tokenDisplay(" 0x12 ").text, "0x12");
+  assert.ok(TOKEN_ADDRESS === "" || TOKEN_ADDRESS === null || typeof TOKEN_ADDRESS === "string");
+});

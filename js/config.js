@@ -22,6 +22,11 @@ export const APP_CONFIG = {
   confirmations: 1
 };
 
+// TRONAUT_TOKEN: the token contract address shown on the landing page.
+// Leave it empty ("") or null and the page shows "Coming soon".
+// At launch, paste the address between the quotes. Whatever is here is shown as is.
+export const TOKEN_ADDRESS = "";
+
 export const CHAIN = {
   // TRONAUT_DEPLOYMENT: confirm these against the network the contracts use.
   CHAIN_ID: 4663,

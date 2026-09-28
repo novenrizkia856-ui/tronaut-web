@@ -105,13 +105,28 @@ export function hideDuplicates(scope) {
   (scope || document).querySelectorAll('[hover="text"].is-2, [hover="icon"].is-2').forEach(function (el) { el.setAttribute("aria-hidden", "true"); });
 }
 
+/* Fallback for browsers without the async clipboard API. */
+function legacyCopy(value) {
+  const area = document.createElement("textarea");
+  area.value = value;
+  area.setAttribute("readonly", "");
+  area.style.cssText = "position:fixed;top:0;left:0;opacity:0";
+  document.body.appendChild(area);
+  area.select();
+  let ok = false;
+  try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+  area.remove();
+  return ok;
+}
+
 /* One delegated handler for every Copy button on the page. */
 if (typeof document !== "undefined") document.addEventListener("click", function (e) {
   const btn = e.target.closest && e.target.closest("[data-copy]");
   if (!btn) return;
   e.preventDefault();
   const value = btn.getAttribute("data-copy");
-  (navigator.clipboard ? navigator.clipboard.writeText(value) : Promise.reject())
+  (navigator.clipboard && window.isSecureContext ? navigator.clipboard.writeText(value) : Promise.reject())
+    .catch(function () { if (!legacyCopy(value)) throw new Error("blocked"); })
     .then(function () { toast("Copied to clipboard"); })
     .catch(function () { toast("Copy is blocked in this browser"); });
 });
@@ -122,6 +137,12 @@ export function afterRender(scope) {
     window.TronautMotion.bind(scope);
     window.TronautMotion.refresh();
   }
+}
+
+/* Token address rule: empty, null or whitespace means not launched yet. */
+export function tokenDisplay(value) {
+  const v = value == null ? "" : String(value).trim();
+  return v ? { launched: true, text: v } : { launched: false, text: "Coming soon" };
 }
 
 export function params() {

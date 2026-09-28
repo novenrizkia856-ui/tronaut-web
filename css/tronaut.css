@@ -220,3 +220,13 @@ a.tr-row:hover .tr-go .btn-cta_btn-icon { transform: translateX(var(--4px)); }
   border: 1px solid var(--_colors---base-1000--10); border-radius: .6em; background: transparent; padding: .45em .8em; margin-right: .8em;
 }
 .tr-field input[type="file"]::file-selector-button:hover { background: var(--_colors---base-1000--10); }
+
+/* ---------- token address (landing data strip) ---------- */
+.tr-ca_row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--_margins---m-12); }
+.tr-ca[data-state="soon"] [data-token-address] { color: var(--_colors---base-1000--30); }
+.tr-ca_copy {
+  font-family: var(--_fonts---font-body); cursor: pointer; background: transparent; color: var(--_colors---base-1000--100);
+  border: 1px solid var(--_colors---base-1000--10); border-radius: .6em; padding: .45em .8em;
+  transition: background-color .6s cubic-bezier(.25, 1, .5, 1);
+}
+.tr-ca_copy:hover { background-color: var(--_colors---base-1000--10); }
