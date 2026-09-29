@@ -13,7 +13,7 @@
 export const APP_CONFIG = {
   // "demo": everything reads the static sample data in data/.
   // "live": onchain panels read Robinhood Chain through js/contracts.js.
-  mode: "demo",
+  mode: "live",
 
   // Hash used when a document is fingerprinted in the browser before it is
   // anchored. Match whatever ProvenanceRegistry expects: "sha256" or "keccak256".
@@ -40,27 +40,27 @@ export const CHAIN = {
 export const CONTRACTS = {
   // TRONAUT_DEPLOYMENT:
   // Insert deployed AircraftAssetRegistry address here.
-  aircraftAssetRegistry: "",
+  aircraftAssetRegistry: "0xB920299eb97c77e0dCB021B2352f399745E6293e",
 
   // TRONAUT_DEPLOYMENT:
   // Insert deployed AssetMetadata address here.
-  assetMetadata: "",
+  assetMetadata: "0xe3F2a11456689FBb627ab83eD918B884fB4ACF99",
 
   // TRONAUT_DEPLOYMENT:
   // Insert deployed AssetAttestation address here.
-  assetAttestation: "",
+  assetAttestation: "0x588Fb23112fF4003f38F43c2A86cFC93550169f5",
 
   // TRONAUT_DEPLOYMENT:
   // Insert deployed ProvenanceRegistry address here.
-  provenanceRegistry: ""
+  provenanceRegistry: "0xbc107eB644e567Aa6E052D2B000a9F68cE9F2d1d"
 };
 
 // Block each contract was deployed in. Event scans start here instead of block 0.
 export const DEPLOYMENT_BLOCKS = {
-  aircraftAssetRegistry: 0,
-  assetMetadata: 0,
-  assetAttestation: 0,
-  provenanceRegistry: 0
+  aircraftAssetRegistry: 75346923,
+  assetMetadata: 75346923,
+  assetAttestation: 75346923,
+  provenanceRegistry: 75346923
 };
 
 // Where each ABI lives. The files may hold a bare ABI array or a compiler
