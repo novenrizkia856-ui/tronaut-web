@@ -6,7 +6,8 @@
   "scripts": {
     "sync": "node tools/sync-partials.mjs",
     "check": "node tools/sync-partials.mjs --check && node tools/check-copy.mjs && node --test test/data.test.mjs test/config.test.mjs",
-    "check:browser": "node tools/check-browser.mjs"
+    "check:browser": "node tools/check-browser.mjs",
+    "connect": "node tools/connect-deployment.mjs"
   },
   "engines": { "node": ">=20" }
 }
