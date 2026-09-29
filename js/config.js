@@ -2,9 +2,10 @@
 
    Going live after the contracts are deployed to Robinhood Chain:
      1. Paste the four contract addresses into CONTRACTS below.
-     2. Replace the placeholder ABIs in abi/ with the compiled ABIs.
-     3. Wire the read and write functions in js/contracts.js (BINDINGS).
-     4. Set APP_CONFIG.mode to "live".
+     2. Set DEPLOYMENT_BLOCKS from tronaut-contracts/deployments/<chainId>.json.
+     3. Set APP_CONFIG.mode to "live".
+   The ABIs in abi/ and the bindings in js/bindings.js already match the
+   contracts. Re-copy the ABIs from tronaut-contracts/abi/ if they change.
    Until every required piece is present the app stays in demo mode on its own
    and says why on the Registry page, so a half finished deployment can never
    show demo data as if it came from the chain. */

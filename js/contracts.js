@@ -7,10 +7,11 @@
      LiveSource  calls the deployed contracts on Robinhood Chain through the
                  function named in BINDINGS for each operation.
 
-   The final contract interfaces are not published yet, so no function names
-   are guessed. Every binding below starts as null. When the ABIs arrive, fill
-   the matching entry; the Registry page lists anything still unbound. */
+   BINDINGS live in js/bindings.js and match the ABIs exported from
+   tronaut-contracts. The Registry page lists any operation left unbound. */
 import { APP_CONFIG, CHAIN, CONTRACTS, ABI_PATHS, MODULES, DEPLOYMENT_BLOCKS, ETHERS_URL } from "./config.js";
+import { BINDINGS } from "./bindings.js";
+export { BINDINGS };
 import { loadCatalogue, findAircraft, findEvidence, findAttestations } from "./data.js";
 import { wallet, isCorrectChain, rpc, trackTransaction, readableError } from "./web3.js";
 
@@ -31,35 +32,6 @@ export const OPERATIONS = {
   getAttestation: { contract: "assetAttestation", kind: "read", label: "Read attestation by ID" },
   getAttestationsForAsset: { contract: "assetAttestation", kind: "read", label: "List attestations for an asset" },
   submitAttestation: { contract: "assetAttestation", kind: "write", label: "Submit attestation" }
-};
-
-/* ---------- TRONAUT_DEPLOYMENT: bind operations to the deployed ABIs ----------
-   Each binding is one of:
-     { fn: "functionName", args(input) => [...], map(result, input) => shape }
-     { event: "EventName", filter(input) => [...indexed args], map(log, input) => shape }
-   `input` is what the UI collected (see the input notes). `map` must return the
-   shapes documented at the end of this file. Example only, not a real ABI:
-
-     getAsset: {
-       fn: "getAsset",
-       args: (input) => [BigInt(input.assetId)],
-       map: (r) => ({ assetId: r.id.toString(), registration: r.registration,
-                      metadataRef: r.metadataURI, evidenceRoot: r.evidenceRoot,
-                      registeredBy: r.registrar, registeredAt: Number(r.createdAt) })
-     },
-*/
-export const BINDINGS = {
-  getAsset: null,                 // input { assetId }            -> RegistryRecord
-  findAssetByRegistration: null,  // input { registration }       -> RegistryRecord
-  registerAsset: null,            // input { registration, manufacturer, model, msn, metadataRef }
-  getMetadataRef: null,           // input { assetId }            -> { metadataRef, updatedAt }
-  updateMetadata: null,           // input { assetId, metadataRef }
-  getEvidenceForAsset: null,      // input { assetId }            -> Evidence[]
-  getEvidenceByHash: null,        // input { hash }               -> Evidence
-  attachProvenance: null,         // input { assetId, hash, reference, uri }
-  getAttestation: null,           // input { attestationId }      -> Attestation
-  getAttestationsForAsset: null,  // input { assetId }            -> Attestation[]
-  submitAttestation: null         // input { assetId, type, evidenceHash, state }
 };
 
 /* ---------- errors the UI renders as states, not crashes ---------- */
@@ -198,6 +170,7 @@ class LiveSource {
   async read(op, input) {
     const b = BINDINGS[op];
     if (!b) throw new NotBoundError(op);
+    if (b.call) return b.call(this, input);
     const c = await this.contract(OPERATIONS[op].contract);
     if (b.event) {
       const filter = c.filters[b.event].apply(null, b.filter ? b.filter(input) : []);
@@ -218,10 +191,18 @@ class LiveSource {
     const ethers = await loadEthers();
     const signer = await new ethers.BrowserProvider(wallet.provider).getSigner();
     const c = await this.contract(OPERATIONS[op].contract, signer);
+    // Bindings validate the form input; a bad field fails here, before the wallet opens.
+    let args;
+    try {
+      args = b.args ? b.args(input) : [];
+    } catch (err) {
+      onUpdate({ status: "failed", error: err.message });
+      throw err;
+    }
     onUpdate({ status: "signing" });
     let tx;
     try {
-      tx = await c[b.fn].apply(null, b.args ? b.args(input) : []);
+      tx = await c[b.fn].apply(null, args);
     } catch (err) {
       onUpdate({ status: "failed", error: readableError(err) });
       throw err;

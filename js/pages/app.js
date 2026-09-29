@@ -196,7 +196,7 @@ function attestationRows(items) {
         '<div class="c34 m-full"><div class="l1">' + esc(t.registration || t.assetId) + " · " + esc(t.issuer || "Unknown issuer") + '</div><div class="l1 text-gray">' + (t.issuerAddress ? linkOut("address", t.issuerAddress) : "No issuer address") + "</div></div>" +
         '<div class="c5 m-full l1">' + (t.evidenceTitle ? esc(t.evidenceTitle) + "<br/>" : "") + hashCell(t.evidence, { demo: t.demo }) + "</div>" +
         '<div class="c6 m-half l1">' + esc(fmtDateTime(t.timestamp) || "Not recorded") + '<div class="l1 text-gray">' + txCell(t.tx, t.demo ? "Not anchored, demo" : "No transaction") + "</div></div>" +
-        '<div class="c7 m-side">' + badge(t.state) + "</div></div>";
+        '<div class="c7 m-side">' + (t.revoked ? badge("unknown", "Revoked") : badge(t.state)) + "</div></div>";
     }).join("") + "</div>";
 }
 
@@ -228,7 +228,8 @@ async function lookupAttestations(q) {
 onLookup("attestations", lookupAttestations);
 
 /* ---------- authorized actions (the action sheet) ---------- */
-const STATES = [["verified", "Verified"], ["reported", "Reported"], ["unverified", "Unverified"], ["unknown", "Unknown"]];
+// AssetAttestation refuses "unknown": an attestation always states something.
+const STATES = [["verified", "Verified"], ["reported", "Reported"], ["unverified", "Unverified"]];
 const ACTIONS = {
   registerAsset: {
     title: "Register asset", desc: "Creates a registry record for an airframe. Metadata stays offchain behind its reference.",
@@ -236,7 +237,7 @@ const ACTIONS = {
   },
   updateMetadata: {
     title: "Update metadata", desc: "Points an asset at a new metadata reference. The previous reference stays in history.",
-    fields: [["assetId", "Asset ID", "TRN0001"], ["metadataRef", "Metadata reference", "ipfs:// or https://"]]
+    fields: [["assetId", "Asset ID", "TRN0001"], ["metadataRef", "Metadata reference", "ipfs:// or https://"], ["contentHash", "Content hash", "0x…"]]
   },
   attachProvenance: {
     title: "Anchor evidence", desc: "Anchors a document fingerprint and its reference. The document itself is never uploaded.",

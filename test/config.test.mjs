@@ -33,6 +33,23 @@ test("every operation has a binding slot and a known contract", () => {
   for (const op of Object.values(OPERATIONS)) assert.ok(op.contract in CONTRACTS);
 });
 
+test("write bindings call functions that exist in the ABIs", () => {
+  for (const [op, b] of Object.entries(BINDINGS)) {
+    if (!b.fn) continue;
+    const abi = JSON.parse(readFileSync(new URL("../" + ABI_PATHS[OPERATIONS[op].contract], import.meta.url), "utf8"));
+    assert.ok(abi.some((x) => x.type === "function" && x.name === b.fn), op + " -> " + b.fn);
+  }
+});
+
+test("asset and attestation IDs round trip between UI and chain", async () => {
+  const { parseId, formatId, VERIFICATION_STATES } = await import("../js/bindings.js");
+  assert.equal(parseId("TRN0001", "TRN"), 1n);
+  assert.equal(parseId("12", "TRN"), 12n);
+  assert.equal(parseId("N650TR", "TRN"), null);
+  assert.equal(formatId(7n, "ATT"), "ATT0007");
+  assert.deepEqual(VERIFICATION_STATES, ["unknown", "unverified", "reported", "verified"]);
+});
+
 test("a missing deployment resolves to demo mode with reasons", async () => {
   if (Object.values(CONTRACTS).every(isAddress) && APP_CONFIG.mode === "live") return; // deployed: covered by the live check
   const state = await resolveMode();
