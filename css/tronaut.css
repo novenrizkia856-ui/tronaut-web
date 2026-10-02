@@ -238,3 +238,9 @@ a.tr-row:hover .tr-go .btn-cta_btn-icon { transform: translateX(var(--4px)); }
 .tr-ca_mobile { position: relative; z-index: 2; }
 .tr-ca_mobile .tr-ca { text-shadow: 0 1px 14px rgba(0, 0, 0, .45); }
 .tr-ca_mobile .tr-ca_copy { background-color: rgba(49, 39, 38, .35); }
+
+/* Brand images from the TRONAUT logo pack (assets/brand). */
+.logo{height:var(--32px);aspect-ratio:1200/314}
+.logo img,.diagram-logo img{display:block;width:100%;height:100%;object-fit:contain}
+.logo .logo_on-color,.theme_on-color .logo .logo_on-light{display:none}
+.theme_on-color .logo .logo_on-color{display:block}
